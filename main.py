@@ -50,7 +50,7 @@ def get_gamepass(username):
         ).json()['data'][0]['id']
     except: return None, None
 
-    games = requests.get(f'https://games.roproxy.com/v2/users/{user_id}/games')
+    games = requests.get(f'https://games.roproxy.com/v2/users/{user_id}/games?limit=50&sortOrder=Asc')
     games_data = games.json().get('data', [])
 
     gamepass = []
