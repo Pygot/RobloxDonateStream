@@ -231,10 +231,14 @@ class GiveawayApp(QMainWindow):
         self.config['cookie'] = self.cookie_input.text()
 
     def toggle_giveaway(self):
+        self.start_button.setEnabled(False)
+        
         if not self.is_running:
             self.start_giveaway()
         else:
             self.stop_giveaway()
+            
+        QTimer.singleShot(3000, lambda: self.start_button.setEnabled(True))
 
     def start_giveaway(self):
         self.update_config_from_ui()
