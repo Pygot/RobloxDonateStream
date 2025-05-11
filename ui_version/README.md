@@ -23,7 +23,7 @@ You need to install python for this to work. If you don't have python click this
 ```sh
 git clone https://github.com/Pygot/RobloxDonateStream.git
 ```
-2. Navigate to the RobloxDonateStream folder
+2. Navigate to the RobloxDonateStream/ui_version folder
 3. Open a command prompt in the folder and execute the following command
 ```sh
 pip install requests pytchat pyside6
