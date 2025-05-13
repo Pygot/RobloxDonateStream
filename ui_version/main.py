@@ -381,13 +381,10 @@ class GiveawayApp(QMainWindow):
                 'x-csrf-token': csrf_response.headers['X-CSRF-Token'],
             }
 
-            revoke_response = session.post(
+            session.post(
                 f'https://apis.roblox.com/game-passes/v1/game-passes/{gamepass_id}:revokeownership',
                 headers=headers
             )
-
-            if revoke_response.status_code != 200:
-                self.logger.log_it(f"Failed to revoke ownership: {revoke_response.status_code}", 2)
 
             headers['Referer'] = 'https://www.roblox.com/'
             headers['Content-Type'] = 'application/json; charset=UTF-8'
